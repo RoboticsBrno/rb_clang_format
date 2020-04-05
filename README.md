@@ -9,12 +9,16 @@ Založeno na [WebKit Code Style Guidelines](https://webkit.org/code-style-guidel
 - `BreakBeforeBraces: Attach` => `void foo() {...`
 - `NamespaceIndentation: None` => kód uvnitř vnitřních `namespace` se neodsazuje
 - `ReflowComments: false` => komentáře nejsou omezeny maximálním počtem znaků na řádek
+- `IncludeCategories:` => mění pořadí `#include` v závislosti na definovaných pravidlech <!-- FIXME: Maybe better explenation? -->
+- `IncludeBlocks:   Preserve ` => zachovává při třízení skupiny `#include` příkazů oddělené prázdným řádkem (třízení se odehrává pouze v rámci jednotlivých skupin)
 
 ### VS Code & Visual Studio 2017+
 
 Specifikace v `.clang-format` souboru lze využít pro nastavení formátování ve [VS Code](https://code.visualstudio.com/docs/cpp/cpp-ide#_code-formatting) a [od verze 2017 také ve Visual Studiu](https://devblogs.microsoft.com/cppblog/clangformat-support-in-visual-studio-2017-15-7-preview-1/).
 
 Pokud chcete aktivovat automatické formátování zdrojového kódu při uložení ve `VS Code`, přidejte si do `.vscode/setting.json` toto nastavení: `"editor.formatOnSave": true` (viz soubor [`setting.json`](/.vscode/settings.json) v tomto repozitáři).
+
+Pokud chcete využít plný potenciál clang-format ve `VS Code` je také potřeba přidat do `.vscode/setting.json` toto nastavení: `"C_Cpp.clang_format_sortIncludes": true` (viz soubor [`setting.json`](/.vscode/settings.json) v tomto repozitáři).
 
 Pro automatické formátování zdrojového kódu při uložení ve `Visual Studiu` je potřeba nainstalovat doplněk [Format document on Save](https://marketplace.visualstudio.com/items?itemName=mynkow.FormatdocumentonSave).
 
@@ -43,3 +47,5 @@ Based on [WebKit Code Style Guidelines](https://webkit.org/code-style-guidelines
 - `BreakBeforeBraces: Attach` => `void foo() {...`
 - `NamespaceIndentation: None` => code inside `namespace` is not indented 
 - `ReflowComments: false` => comments are not limited to maximal number of characters per line
+- `IncludeCategories:` => sorts `#include` based on defined rules <!-- FIXME: Maybe better explenation? -->
+- `IncludeBlocks:   Preserve ` => preserves groups of `#include` separated from each other by empty line (sorting happens inside each group separately)
